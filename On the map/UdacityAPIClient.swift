@@ -44,7 +44,7 @@ class UdacityAPIClient: NSObject{
                 return
             }
             
-            let range = Range(uncheckedBounds: (5,data.count - 5))
+            let range = Range(uncheckedBounds: (5,data.count))
             let newData = data.subdata(in: range)
             
             self.convertDataWithCompletionHandler(data: newData, completionHandlerForConvertData: completionHandlerForPost)
@@ -89,7 +89,7 @@ class UdacityAPIClient: NSObject{
                 return
             }
             
-            let range = Range(uncheckedBounds: (5,data.count - 5))
+            let range = Range(uncheckedBounds: (5,data.count))
             let newData = data.subdata(in: range)
             
             completionForDeleteMethod(true,nil)
@@ -134,7 +134,7 @@ class UdacityAPIClient: NSObject{
                 return
             }
             
-            let range = Range(uncheckedBounds: (5,data.count - 5))
+            let range = Range(uncheckedBounds: (5,data.count))
             let newData = data.subdata(in: range)
             
             self.convertDataWithCompletionHandler(data: newData, completionHandlerForConvertData: completionHandlerForGetData)

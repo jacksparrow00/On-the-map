@@ -9,14 +9,14 @@
 import Foundation
 extension ParseAPIClient{
     struct ParseModel{
-        let firstName : String
-        let lastName : String
-        let objectId : String
-        let uniqueKey : String
-        let mapString : String
-        let mediaURL : String
-        let latitude : Double
-        let longitude : Double
+        var firstName : String
+        var lastName : String
+        var objectId : String
+        var uniqueKey : String
+        var mapString : String
+        var mediaURL : String
+        var latitude : Double
+        var longitude : Double
     
         init?(dictionary: [String:AnyObject]){
             guard let firstname = dictionary[ParseAPIClient.ParseAPIConstants.firstName] as? String else{

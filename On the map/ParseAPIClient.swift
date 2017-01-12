@@ -77,18 +77,18 @@ class ParseAPIClient: NSObject{
         task.resume()
     }
     
-    func taskForPostLocation(newUser : ParseAPIClient.ParseModel, completionHandlerForPost: @escaping(_ result: Bool?, _ error: String?) -> Void) {
+    func taskForPostLocation(uniqueKey: String, firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double, completionHandlerForPost: @escaping(_ result: AnyObject?, _ error: String?) -> Void) {
         let request = NSMutableURLRequest(url: urlGenerator(parameter: nil))
         request.httpMethod = "POST"
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApplicationKey, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApplicationJson, forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"\(ParseAPIClient.ParseAPIConstants.uniqueKey)\": \"\(newUser.uniqueKey)\" , \"\(ParseAPIClient.ParseAPIConstants.firstName)\" : \"\(newUser.firstName)\" , \"\(ParseAPIClient.ParseAPIConstants.lastName)\" : \"\(newUser.lastName)\" , \"\(ParseAPIClient.ParseAPIConstants.mapString)\" : \"\(newUser.mapString)\" , \"\(ParseAPIClient.ParseAPIConstants.mediaURL)\" : \"\(newUser.mediaURL)\" , \"\(ParseAPIClient.ParseAPIConstants.latitude)\" :  \(newUser.latitude), \"\(ParseAPIClient.ParseAPIConstants.longitude)\" : \(newUser.longitude)}".data(using: String.Encoding.utf8)
+        request.httpBody = "{\"\(ParseAPIClient.ParseAPIConstants.uniqueKey)\": \"\(uniqueKey)\" , \"\(ParseAPIClient.ParseAPIConstants.firstName)\" : \"\(firstName)\" , \"\(ParseAPIClient.ParseAPIConstants.lastName)\" : \"\(lastName)\" , \"\(ParseAPIClient.ParseAPIConstants.mapString)\" : \"\(mapString)\" , \"\(ParseAPIClient.ParseAPIConstants.mediaURL)\" : \"\(mediaURL)\" , \"\(ParseAPIClient.ParseAPIConstants.latitude)\" :  \(latitude), \"\(ParseAPIClient.ParseAPIConstants.longitude)\" : \(longitude)}".data(using: String.Encoding.utf8)
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             func sendError(errorString: String){
                 print(errorString)
-                completionHandlerForPost(false,errorString)
+                completionHandlerForPost(nil,errorString)
             }
             
             guard error == nil else{
@@ -105,21 +105,21 @@ class ParseAPIClient: NSObject{
                 sendError(errorString: "Your request did not return any data")
                 return
             }
-            completionHandlerForPost(true, nil)
+            self.convertDataWithCompletionHandler(data: data, completionHandlerForConvertData: completionHandlerForPost)
         }
         task.resume()
     }
     
-    func taskForPutMethod(newUser: ParseAPIClient.ParseModel, completionHandlerForPost: @escaping (_ result: Bool?, _ error: String?) -> Void) {
+    func taskForPutMethod(objectID: String,uniqueKey: String, firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double, completionHandlerForPost: @escaping (_ result: Bool?, _ error: String?) -> Void) {
         var urlString = String(describing: urlGenerator(parameter: nil))
-        urlString = urlString + "/\(newUser.objectId)"
+        urlString = urlString + "/\(objectID)"
         let url = URL(string: urlString)
         let request = NSMutableURLRequest(url: url!)
         request.httpMethod = "PUT"
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApplicationKey, forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue(ParseAPIClient.ParseAPIKeyConstants.ApplicationJson, forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"\(ParseAPIClient.ParseAPIConstants.uniqueKey)\": \"\(newUser.uniqueKey)\" , \"\(ParseAPIClient.ParseAPIConstants.firstName)\" : \"\(newUser.firstName)\" , \"\(ParseAPIClient.ParseAPIConstants.lastName)\" : \"\(newUser.lastName)\" , \"\(ParseAPIClient.ParseAPIConstants.mapString)\" : \"\(newUser.mapString)\" , \"\(ParseAPIClient.ParseAPIConstants.mediaURL)\" : \"\(newUser.mediaURL)\" , \"\(ParseAPIClient.ParseAPIConstants.latitude)\" :  \(newUser.latitude), \"\(ParseAPIClient.ParseAPIConstants.longitude)\" : \(newUser.longitude)}".data(using: String.Encoding.utf8)
+        request.httpBody = "{\"\(ParseAPIClient.ParseAPIConstants.uniqueKey)\": \"\(uniqueKey)\" , \"\(ParseAPIClient.ParseAPIConstants.firstName)\" : \"\(firstName)\" , \"\(ParseAPIClient.ParseAPIConstants.lastName)\" : \"\(lastName)\" , \"\(ParseAPIClient.ParseAPIConstants.mapString)\" : \"\(mapString)\" , \"\(ParseAPIClient.ParseAPIConstants.mediaURL)\" : \"\(mediaURL)\" , \"\(ParseAPIClient.ParseAPIConstants.latitude)\" :  \(latitude), \"\(ParseAPIClient.ParseAPIConstants.longitude)\" : \(longitude)}".data(using: String.Encoding.utf8)
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             func sendError(errorString: String){

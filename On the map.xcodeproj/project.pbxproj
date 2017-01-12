@@ -10,6 +10,7 @@
 		6B0F0EA51E1D0FCD008D3E9D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0F0EA41E1D0FCD008D3E9D /* TableViewController.swift */; };
 		6B0F55511E1B8A2B00DCCA24 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0F55501E1B8A2B00DCCA24 /* UserModel.swift */; };
 		6B1334DF1E20157A00957255 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1334DE1E20157A00957255 /* InformationPostingViewController.swift */; };
+		6B1698671E264D2E00455B26 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1698661E264D2E00455B26 /* MapViewController.swift */; };
 		6B1E6A811E112DA0002EF472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E6A801E112DA0002EF472 /* AppDelegate.swift */; };
 		6B1E6A831E112DA0002EF472 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1E6A821E112DA0002EF472 /* LoginViewController.swift */; };
 		6B1E6A861E112DA0002EF472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1E6A841E112DA0002EF472 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		6B0F0EA41E1D0FCD008D3E9D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6B0F55501E1B8A2B00DCCA24 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6B1334DE1E20157A00957255 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
+		6B1698661E264D2E00455B26 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6B1E6A7D1E112DA0002EF472 /* On the map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1E6A801E112DA0002EF472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B1E6A821E112DA0002EF472 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				6B1E6A821E112DA0002EF472 /* LoginViewController.swift */,
 				6B0F0EA41E1D0FCD008D3E9D /* TableViewController.swift */,
 				6B1334DE1E20157A00957255 /* InformationPostingViewController.swift */,
+				6B1698661E264D2E00455B26 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				6BB1414C1E1391D8003512FE /* UdacityAPIClient.swift in Sources */,
 				6BE4E2851E1258EF00E4D359 /* ParseModel.swift in Sources */,
 				6B1E6AB01E112E5B002EF472 /* ParseAPIConstants.swift in Sources */,
+				6B1698671E264D2E00455B26 /* MapViewController.swift in Sources */,
 				6BB1414A1E12BDF7003512FE /* UdacityAPIConstants.swift in Sources */,
 				6B0F55511E1B8A2B00DCCA24 /* UserModel.swift in Sources */,
 				6B1334DF1E20157A00957255 /* InformationPostingViewController.swift in Sources */,

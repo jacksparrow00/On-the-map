@@ -30,7 +30,7 @@
         <!--List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="On_the_map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="On_the_map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -53,6 +53,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list" id="UkZ-Wd-XBn"/>
                     <navigationItem key="navigationItem" id="1Nk-0l-qbo"/>
+                    <connections>
+                        <outlet property="mapView" destination="Jjs-dC-gI7" id="xic-Dc-jTf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,6 +103,9 @@
                                 <state key="normal" title="Find On the Map">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="findOnTheMapButton:" destination="gMi-8c-fhL" eventType="touchUpInside" id="aWH-tQ-FEr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-7a-cLE">
                                 <rect key="frame" x="141" y="548" width="93" height="30"/>
@@ -107,6 +113,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="gMi-8c-fhL" eventType="touchUpInside" id="p9t-4s-FL0"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-hB-UrJ">
                                 <rect key="frame" x="0.0" y="220" width="375" height="447"/>
@@ -143,6 +152,15 @@
                             <constraint firstItem="mve-9L-isu" firstAttribute="leading" secondItem="doS-7a-HyR" secondAttribute="leading" id="z2w-4j-mhP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="findOnTheMapButton" destination="5g6-aA-OlC" id="Bj8-yr-Cg2"/>
+                        <outlet property="linkTextfield" destination="X9h-kf-ISq" id="O2J-gk-BjW"/>
+                        <outlet property="locationTextfield" destination="DRQ-BA-pW3" id="Dt9-hs-buk"/>
+                        <outlet property="mapViewOutlet" destination="Byn-hB-UrJ" id="hRI-a1-eK9"/>
+                        <outlet property="studyingLabel" destination="mve-9L-isu" id="pjf-io-0Bu"/>
+                        <outlet property="submitButton" destination="EmX-7a-cLE" id="HEa-Ad-MUf"/>
+                        <outlet property="whereAreYouLabel" destination="doS-7a-HyR" id="WIw-FJ-dnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gax-8B-mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
